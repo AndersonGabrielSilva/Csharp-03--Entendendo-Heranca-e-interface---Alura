@@ -16,7 +16,7 @@ namespace Teste_SobreCarga
             testes.EscreveNumero(5.0);
             testes.TestarSobrecarga(5,5);
             testes.TestarSobrecarga(5,5.0);
-            testes.Teste2(1,2);
+            //testes.Teste2(1,2);
             //testes.Teste();
         }
     }

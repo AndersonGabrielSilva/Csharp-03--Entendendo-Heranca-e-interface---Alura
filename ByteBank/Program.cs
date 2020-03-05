@@ -1,4 +1,5 @@
 ﻿using ByteBank.Funcionarios;
+using ByteBank.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,37 +13,61 @@ namespace ByteBank
 {
     class Program
     {
+        public object SitemaInterno { get; private set; }
+
         static void Main(string[] args)
         {
-
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
-
-            Funcionario anderson = new Funcionario();
-
-            anderson.Nome = "Anderson Gabriel";
-            anderson.CPF = "427.135.296.56";
-            anderson.Salario = 800;
-
-            gerenciador.Registrar(anderson);
-
-            Console.WriteLine(anderson.Nome);
-            Console.WriteLine(anderson.GetBonificao());
-
-            Diretor lucas = new Diretor();
-            lucas.Nome = "Lucas souza";
-            lucas.CPF = "428.745.169.96";
-            lucas.Salario = 10000;
-
-            gerenciador.Registrar(lucas);
-
-
-            Console.WriteLine(lucas.Nome);
-            Console.WriteLine(lucas.GetBonificao());
-
-            Console.WriteLine("Total de bonificaçoes: " + gerenciador.GetTotalBonitficacao());
-
+            UsarSistema();
+            //CalcularBonificação();
             Console.ReadKey();
 
         }
+
+
+        public static void UsarSistema()
+        {
+            SistemaInterno sistemaInterno = new SistemaInterno();
+
+            Diretor roberta = new Diretor("428.137.298-65");
+            roberta.Nome = "Roberta";
+            roberta.Senha = "123";
+
+            sistemaInterno.Logar(roberta, "123");
+            sistemaInterno.Logar(roberta, "456");
+
+            GerentedeConta camila = new GerentedeConta("428.456.753-45");
+            camila.Nome = "Camila";
+
+        }
+
+        //O metodo abaixo cria os objetos e faz o calculo da bonificação
+        public static void CalcularBonificação()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+
+            Desenvolvedor guimerme = new Desenvolvedor("428.137.265-52");
+            guimerme.Nome = "Guilherme";
+
+            Desing pedro = new Desing("428.138.729-94");
+            pedro.Nome = "Pedro";
+
+            Diretor roberta = new Diretor("428.137.298-65");
+            roberta.Nome = "Roberta";
+
+            Auxiliar igor = new Auxiliar("428.145.236-56");
+            igor.Nome = "Igor";
+
+            GerentedeConta camila = new GerentedeConta("428.456.753-45");
+            camila.Nome = "Camila";
+
+            gerenciadorBonificacao.Registrar(pedro);
+            gerenciadorBonificacao.Registrar(roberta);
+            gerenciadorBonificacao.Registrar(igor);
+            gerenciadorBonificacao.Registrar(camila);
+
+            Console.WriteLine("Total de Bonificação: " + gerenciadorBonificacao.GetTotalBonitficacao());
+            
+        }
+
     }
 }

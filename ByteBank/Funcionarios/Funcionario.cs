@@ -6,18 +6,29 @@ using System.Threading.Tasks;
 
 namespace ByteBank.Funcionarios
 {
-   public class Funcionario
-    {
-         
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public double Salario { get; set; }
+   public abstract class Funcionario
+   {
 
-        public double GetBonificao()
+        //Esse Atributo estatico serve para nos informar a quantidade de funcinarios
+        //Ela contabiliza toda vez quando um objeto do Tipo Funcionario é Instanciada
+        //Para isto criamos o Contrutor Funcionario na linha 20
+        public static int TotalDeFuncionarios { get; private set; }
+        public string Nome { get; set; }
+        public string CPF { get; private set; }
+        public double Salario { get; protected set; }
+
+        //Construtor
+        public Funcionario(double salario ,string cpf)
         {
-            return Salario * 0.10;
+            Console.WriteLine("Criando FUNCIONARIO");
+            Salario = salario;
+            CPF = cpf;
+
+            TotalDeFuncionarios++;
         }
 
+        public abstract double GetBonificao();
+        public abstract void AumentarSalario();
 
-    }
+   }
 }
