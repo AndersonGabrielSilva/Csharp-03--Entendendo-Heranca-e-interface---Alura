@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace ByteBank
 {
+
+    //ULTILIZAÇÃO DO POLIMORFISMO
     class GerenciadorBonificacao
         /*Neste Classe vamos gerenciar o tortal de bonificacoes 
          * somando todas já processadas

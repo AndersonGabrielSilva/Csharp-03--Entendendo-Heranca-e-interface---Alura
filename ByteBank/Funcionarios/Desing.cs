@@ -8,16 +8,25 @@ namespace ByteBank.Funcionarios
 {
     class Desing : Funcionario
     {
-
+        //Neste construtor eu informo que está classe somente pode ser inicializada com os argumentos CPF e Base Salarial
+        //Atravez desta ação torna impossivel ela ser instanciada sem informar estes dados
         public Desing(string cpf) : base(3000, cpf)
         {
-            Console.WriteLine("Criando DIRETOR");
+            Console.WriteLine("Criando DESING");
 
         }
+
+
+        //Neste metodo abaixo eu acabo definindo como sera a bonificação do funcionario
+        //neste caso será 17% do salario
         public override double GetBonificao()
         {           
             return Salario * 0.17;
         }
+
+
+        //No metodo a seguir é realizado o aumento de salario do funcionario
+        //neste exemplo o aumento foi de 11% do salario
         public override void AumentarSalario()
         {
             // Salario = Salario + (Salario * 0.1);
@@ -25,6 +34,5 @@ namespace ByteBank.Funcionarios
             Salario *= 1.11;
 
         }
-
     }
 }

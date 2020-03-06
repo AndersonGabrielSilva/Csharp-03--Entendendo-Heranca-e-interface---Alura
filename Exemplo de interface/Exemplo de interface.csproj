@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{23D00823-1334-4B59-B113-FEC5E6C21E65}</ProjectGuid>
+    <ProjectGuid>{DA38DE1A-1D3D-41D4-9E98-339B28F07766}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ByteBank</RootNamespace>
-    <AssemblyName>ByteBank</AssemblyName>
+    <RootNamespace>Exemplo_de_interface</RootNamespace>
+    <AssemblyName>Exemplo de interface</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,23 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Funcionarios\Auxiliar.cs" />
-    <Compile Include="Funcionarios\Desenvolvedor.cs" />
-    <Compile Include="Funcionarios\Desing.cs" />
-    <Compile Include="Funcionarios\Diretor.cs" />
-    <Compile Include="Funcionarios\Funcionario.cs" />
-    <Compile Include="Funcionarios\FuncionarioAutenticavel.cs" />
-    <Compile Include="Funcionarios\GerentedeConta.cs" />
-    <Compile Include="GerenciadorBonificacao.cs" />
-    <Compile Include="ParceiroComercial.cs" />
+    <Compile Include="Exemplointerface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sistemas\IAutenticavel.cs" />
-    <Compile Include="Sistemas\SistemaInterno.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

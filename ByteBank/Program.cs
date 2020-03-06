@@ -31,13 +31,18 @@ namespace ByteBank
             Diretor roberta = new Diretor("428.137.298-65");
             roberta.Nome = "Roberta";
             roberta.Senha = "123";
-
-            sistemaInterno.Logar(roberta, "123");
-            sistemaInterno.Logar(roberta, "456");
-
+                       
             GerentedeConta camila = new GerentedeConta("428.456.753-45");
             camila.Nome = "Camila";
+            camila.Senha = "123456";
 
+            ParceiroComercial parceiro = new ParceiroComercial();
+            parceiro.Senha = "5478";
+
+            sistemaInterno.Logar(roberta, "456");
+            sistemaInterno.Logar(roberta, "123");
+            sistemaInterno.Logar(camila, "123456");
+            sistemaInterno.Logar(parceiro, "5478");
         }
 
         //O metodo abaixo cria os objetos e faz o calculo da bonificação
@@ -68,6 +73,5 @@ namespace ByteBank
             Console.WriteLine("Total de Bonificação: " + gerenciadorBonificacao.GetTotalBonitficacao());
             
         }
-
     }
 }
